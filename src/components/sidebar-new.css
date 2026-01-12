@@ -1,0 +1,125 @@
+/* sidebar-new.css - Compact Mode Overrides */
+
+/* Only apply these styles when the  class is added */
+.sidebar {
+    background: var(--section-bg);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+    width: 90px;
+    border-right: 2px dashed var(--section-border-color);
+    padding-top: 60px;
+    box-shadow: 0 1px 2px rgb(var(--section-shadow), 0.1);
+    overflow-y: auto;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+/* Force flex column to stack Icon on top of Text */
+.sidebar .side-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4px 2px;
+    margin-bottom: 5px;
+    height: auto;
+    border-radius: 12px; /* Soft rounded corners for the whole item */
+    color: var(--gray-700);
+}
+
+.sidebar .sidebar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Adjust the icon size and background */
+.sidebar .side-link .side-icon {
+    background: var(--input-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 1px auto;
+    border-radius: var(--rounded-lg);
+    border: 2px dashed var(--section-border-color);
+    transition: all 0.2s ease;
+}
+
+/* Remove standard styles that might conflict */
+.sidebar .side-link.active::before {
+    display: none; /* Remove the left highlight bar from standard sidebar */
+}
+
+/* Active State Styles - Matches the dark image */
+.sidebar .side-link.active .side-icon {
+    background: linear-gradient(to bottom, var(--info-400), var(--info-500));
+    color: var(--gray-100);
+}
+
+.sidebar .side-link.active .side-icon::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0px;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.2) 100%
+    );
+    filter: blur(1px); /* Soften the highlight */
+    opacity: 0.7;
+}
+.sidebar .side-link.active {
+    color: var(--info-600);
+    background: transparent; /* Text background remains transparent */
+    border: none;
+    text-shadow: none;
+}
+
+/* Text styling for compact mode */
+.sidebar .side-link span {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 6px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-700);
+}
+
+.sidebar .side-link-has-img {
+    padding-top: 10px;
+}
+
+.sidebar .headshot {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 4px;
+}
+
+/* Hide extra details in compact mode (like @username or Member count) */
+.sidebar .text-xs,
+.sidebar .text-muted,
+.sidebar .side-title {
+    display: none !important;
+}
+
+/* Adjust the main container padding when sidebar is compact */
+/* Note: You might need to add this class to your body or layout wrapper */
+body.sidebar-is-compact .container {
+    padding-left: 110px !important; /* 90px sidebar + 20px gap */
+}

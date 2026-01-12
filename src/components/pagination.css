@@ -1,0 +1,66 @@
+.pagination {
+    appearance: none;
+    margin: 0;
+    padding: 0;
+}
+.page-active::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 3px;
+    width: calc(100% - 6px);
+    height: 50%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.2) 100%
+    );
+    border-radius: var(--rounded-lg); /* Match the button's rounded corners */
+    filter: blur(1px); /* Soften the highlight */
+    opacity: 0.7;
+    z-index: 1; /* Sits above the background but below the text */
+}
+.page-link {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    font-weight: 500;
+    color: var(--pagination-color) !important;
+    border-radius: var(--rounded-sm) !important;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 0;
+    margin: 0;
+    height: 32px;
+    width: 32px;
+}
+.page-link:hover {
+    background: rgb(var(--black-rgb), 8%) !important;
+}
+.page-link:active {
+    background: rgb(var(--black-rgb), 12%) !important;
+    transform: scale(0.94);
+}
+.page-disabled,
+.page-disabled:hover,
+.page-disabled:focus,
+.page-disabled:active {
+    pointer-events: none;
+    background: transparent !important;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.page-active,
+.page-active:hover,
+.page-active:focus,
+.page-active:active {
+    border: 1px solid rgb(var(--button-border-color), 0.2);
+    text-shadow: 0 1px 2px rgb(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px rgb(0, 0, 0, 0.2);
+    background: linear-gradient(
+        to bottom,
+        var(--info-500),
+        var(--info-400)
+    ) !important;
+    color: #fff !important;
+}

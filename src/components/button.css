@@ -1,0 +1,275 @@
+.btn {
+    border: 1px solid rgb(var(--button-border-color), 0.2);
+    border-radius: var(--rounded-lg);
+    cursor: pointer;
+    justify-content: center;
+    padding: 0 18px;
+    display: inline-block;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6); /* Adds a subtle "embossed" look to the text */
+    box-shadow: 0 1px 3px rgb(0, 0, 0, 0.2);
+    white-space: nowrap;
+    transition: all 0.2s;
+    font-weight: 600;
+    width: auto;
+    height: 35px;
+    line-height: 35px;
+    font-size: 15px;
+    position: relative; /* For the highlight overlay */
+    overflow: hidden; /* Clip the overlay */
+}
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 3px;
+    width: calc(100% - 6px);
+    height: 50%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.2) 100%
+    );
+    border-radius: var(--rounded-lg); /* Match the button's rounded corners */
+    filter: blur(1px); /* Soften the highlight */
+    opacity: 0.7;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.btn-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+}
+.btn-sm {
+    height: 38px;
+    line-height: 30px;
+    font-size: 15px;
+}
+.flex-container .btn-sm {
+    line-height: 36px;
+}
+.btn-xs {
+    height: 34px;
+    line-height: 26px;
+    font-size: 13px;
+    padding: 0 15px;
+}
+.flex-container .btn-xs {
+    line-height: 30px;
+}
+
+.btn-like {
+    color: var(--gray-600);
+    padding: 0 !important;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.btn-like i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    height: 26px;
+    width: 26px;
+    margin: 0;
+    padding: 0;
+    border-radius: var(--rounded-circle);
+}
+.btn-like:hover {
+    color: var(--love-500);
+}
+.btn-like:hover i {
+    background: rgb(var(--like-btn-hover-bg)) !important;
+    color: var(--love-500);
+}
+.btn-like.active {
+    color: var(--love-500);
+}
+.btn-like.active i {
+    font-weight: 800;
+}
+
+.btn-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    width: 36px;
+    color: var(--gray-600);
+    border-radius: var(--rounded-circle);
+    transition: all 0.2s;
+}
+.btn-circle:hover {
+    background: rgb(var(--black-rgb), 0.06);
+    color: var(--gray-600);
+}
+
+.btn-circle:active {
+    transform: scale(0.94);
+    background: rgb(var(--black-rgb), 0.1);
+    color: var(--gray-600);
+}
+
+.btn.btn-circle {
+    height: 38px;
+}
+
+.btn-success {
+    background: linear-gradient(
+        to bottom,
+        var(--success-300),
+        var(--success-400)
+    ); /* Light to dark blue gradient */
+    color: #ffffff !important;
+}
+.btn-success:hover {
+    background: linear-gradient(
+        to bottom,
+        var(--success-400),
+        var(--success-500)
+    );
+}
+
+.btn-danger {
+    background: linear-gradient(
+        to bottom,
+        var(--danger-400),
+        var(--danger-500)
+    );
+    color: #ffffff !important;
+}
+.btn-danger:hover {
+    background: linear-gradient(
+        to bottom,
+        var(--danger-500),
+        var(--danger-600)
+    );
+}
+.btn-danger:active {
+    background: var(--danger-400);
+}
+.btn-warning {
+    background: var(--warning-800);
+    color: #ffffff !important;
+}
+.btn-warning:hover {
+    background: var(--warning-700);
+}
+.btn-warning:active {
+    background: var(--warning-600);
+}
+.btn-info {
+    background: linear-gradient(
+        to bottom,
+        var(--info-400),
+        var(--info-500)
+    ); /* Green gradient */
+    color: #ffffff !important;
+}
+.btn-info:hover {
+    background: linear-gradient(
+        to bottom,
+        var(--info-500),
+        var(--info-600)
+    ); /* Green gradient */
+}
+.btn-info:active {
+    background: linear-gradient(
+        to bottom,
+        var(--info-500),
+        var(--info-600)
+    ); /* Green gradient */
+}
+.btn-secondary {
+    background: linear-gradient(
+        to bottom,
+        var(--secondary-500),
+        var(--secondary-600)
+    ); /* Green gradient */
+    background: var(--secondary-600);
+    color: #ffffff !important;
+}
+.btn-secondary:hover {
+    background: var(--secondary-500);
+}
+.btn-secondary:active {
+    background: var(--secondary-400);
+}
+.btn-gray {
+    background: rgb(var(--black-rgb), 0.04);
+    color: var(--btn-gray-color) !important;
+}
+.btn-gray:hover {
+    background: rgb(var(--black-rgb), 0.06);
+}
+.btn-gray:active {
+    background: rgb(var(--black-rgb), 0.08);
+}
+.btn-discord {
+    background: #5865f2;
+    color: #ffffff;
+}
+.btn-discord:hover {
+    background: #6873f0;
+}
+.btn-discord:active {
+    background: #6e78e7;
+}
+.btn-upgrade {
+    background: var(--upgrade-500);
+    color: #ffffff !important;
+}
+.btn-upgrade:hover {
+    background: var(--upgrade-400);
+}
+.btn-upgrade:active {
+    background: var(--upgrade-300);
+}
+.btn-gold {
+    background: #fcaf3c;
+    color: #ffffff !important;
+}
+.btn-gold:hover {
+    border: 2px solid var(--warning-700);
+    background: transparent;
+    color: #ffffff !important;
+}
+
+.btn-skip-to-main-content {
+  position: absolute;
+  left: -50px;
+  z-index: 999;
+  background-color: black;
+  color: white;
+  opacity: 0;
+}
+
+.btn-skip-to-main-content:focus {
+  left: 0px;
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.btn-transparent {
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 0.5rem;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}

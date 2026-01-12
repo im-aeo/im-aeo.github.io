@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('themes.css');
+@import url('foundation.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.6.1/preflight.min.css');
+@import url('utilities.css');
+@import url('components/navbar.css');
+@import url('components/sidebar.css');
+@import url('components/card.css');
+@import url('components/collapsible.css');
+@import url('components/badge.css');
+@import url('components/button.css');
+@import url('components/avatar.css');
+@import url('components/input.css');
+@import url('components/pagination.css');
+@import url('components/progress-bar.css');
+@import url('components/tooltip.css');
+@import url('components/dropdown.css');
+@import url('components/modal.css');
+@import url('components/tabs.css');
+@import url('components/landing.css');
+@import url('components/selection.css');
+@import url('components/sitewide-alert.css');
+@import url('components/toast.css');
+@import url('components/chat.css');
+@import url('components/footer.css');
+@import url('components/table.css');
+@import url('https://kit-pro.fontawesome.com/releases/v6.7.2/css/pro.min.css');
+
+::-webkit-file-upload-button {
+    display: none;
+}
+::-webkit-file-selector-button {
+    display: none;
+}
+
+.card.avatar {
+    width: 300px;
+}
+
+.selection-circle .language {
+    height: 25px !important;
+    width: 25px !important;
+}
+
+.fa-stack {
+    height: 1em;
+    line-height: 1em;
+    position: initial !important;
+    width: 1.5em;
+}
+
+@-moz-keyframes spin {
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spin {
+    animation: spin 1000ms linear infinite;
+}
+
+.ColorPickerItem {
+    border-radius: var(--rounded-lg);
+    border-bottom: 5px solid rgb(0, 0, 0, 0.2);
+}
+
+.ColorPickerItem:active {
+    transform: scale(0.94);
+    border-bottom: 0px solid rgb(0, 0, 0, 0.2);
+}
+
+.ColorPickerItem.active {
+    border: 2px solid var(--info-600);
+    border-bottom: 2px solid var(--info-600);
+    border-radius: var(--rounded-lg);
+}
+
+.chat-container {
+    -webkit-transform: translateZ(0);
+    -ms-transform: none;
+    transform: translateZ(0);
+    position: fixed;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    background: var(--section-bg);
+    bottom: 0;
+    box-shadow: 0 1px 4px rgba(25, 25, 25, 0.75);
+    height: 360px;
+    width: 260px;
+    visibility: hidden;
+    z-index: 1040;
+    line-height: 1.3em;
+    padding-right: 8px;
+}
+
+.chat-container .chat-body .card-chat .card-chat-body .no-corners {
+    border-radius: 0px;
+}
+
+.language-active {
+    background: rgb(var(--sidebar-active-bg));
+    border-color: rgb(var(--sidebar-active-bg));
+}
+
+.language-active .selection-circle {
+    background: var(--info-600);
+    border-color: var(--info-600);
+    text-shadow: 0 1px 2px rgb(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px rgb(var(--section-shadow), 0.1);
+}
+
+.chat-container .chat-body {
+    background-color: var(--section-bg);
+    border-radius: 0px;
+    color: #fff;
+    height: 292px;
+    overflow: auto;
+    position: relative;
+    width: 100%;
+}
+
+.chat-container .chat-header .chat-header-action {
+    padding-right: 8px;
+}
+
+.chat-windows-header .chat-header-action .chat-link-icon {
+    float: right;
+    margin-left: 6px;
+}
+
+.chat-link-icon {
+    position: 0 -100px;
+    size: 40px auto;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.chat-windows-header .chat-caption-header {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    line-height: 14px;
+}
+
+.chat-container .chat-header .chat-header-action {
+    padding-right: 8px;
+}
+
+.chat-windows-header .chat-header-action {
+    float: right;
+    padding: 8px 0 5px 8px;
+    padding-right: 12px;
+}
+
+.chat-close-icon {
+    background-position: 0 -140px;
+}
+
+.chat-close-icon,
+.chat-default-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.chat-windows-header {
+    background-color: var(--info-500);
+    color: #fff;
+    width: 260px;
+}
+
+.chat-container.chat-vis {
+    visibility: visible;
+}
+
+.chat-container .chat-main {
+    position: relative;
+}
+.chat-container .chat-header {
+    position: relative;
+    z-index: 2020;
+}
+
+.chat-container .chat-header .chat-header-label {
+    width: 66%;
+    width: calc(100% - 86px);
+    padding: 8px 0 5px 8px;
+}
+
+.chat-container .chat-header .chat-header-title {
+    width: 100%;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+.sender {
+    font-weight: bold;
+}
+
+.content {
+    margin-top: 5px;
+}
+
+.navbar {
+    z-index: 3;
+}
+
+.sidebar {
+    z-index: 2;
+}
+
+#nprogress .bar {
+    z-index: 9999;
+}
+
+html.nprogress-busy {
+    z-index: 9999;
+}
+
+.mini-text {
+    font-size: 11px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.forum-button {
+    padding: 0.4rem 0.4rem;
+    font-size: 0.875rem;
+    line-height: 0;
+    border-radius: 0.1rem;
+    height: 24px;
+    padding-top: 0.85ch;
+    font-size: 15px;
+    display: block;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-upgrade {
+    color: var(--sidebar-upgrade-color);
+}
+
+.action-menu {
+    height: 17px;
+    flex-shrink: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.headshot-group .headshot {
+    display: inline-block;
+    border-radius: 50%;
+    background: var(--gray-300);
+    border: 2px solid var(--gray-400);
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    line-height: 35px;
+}
+
+.headshot-group .headshot:not(:first-child) {
+    margin-left: -20px;
+    transform: rotateY(-1deg); /* and here */
+}
+
+.btn-game {
+    background: linear-gradient(
+        91.23deg,
+        var(--info-600) 31.94%,
+        var(--white) 92.5%
+    );
+    background-size: auto;
+    background-size: 130% 130%;
+    border: inherit;
+    font-size: 15px;
+    padding: 0 14px;
+}
+
+.action-menu:hover {
+    height: inherit;
+    background: rgb(var(--danger-600-rgb), 0.06);
+    flex-shrink: 0;
+    border-top-right-radius: var(--rounded-circle);
+    border-bottom-right-radius: var(--rounded-circle);
+}
+
+.avaimg {
+    width: 34px;
+    background: var(--gray-300);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 20px;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+.text-promocodes {
+    background: -webkit-linear-gradient(
+        270deg,
+        var(--gray-100) 0%,
+        var(--warning-600) 101.69%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+canvas {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    -ms-interpolation-mode: bicubic;
+}
+
+.fa-beat,
+.fa-bounce,
+.fa-fa-jellye,
+.fa-beat-fa-jellye,
+.fa-flip,
+.fa-pulse,
+.fa-shake,
+.fa-spin,
+.fa-spin-pulse {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#app {
+    min-height: 100vh;
+}
+
+#app.promocodes-page {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.65)),
+        url('/assets/img/promocodes-banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:
+        right 0px top 50px,
+        right 0px bottom 0px,
+        left 30px top 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+body {
+    font-weight: 500;
+    background: var(--body-bg);
+    color: var(--body-color) !important;
+    font-family: 'Lexend Deca', sans-serif;
+    letter-spacing: 1px;
+}
+.full-screen-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: 261.5px !important;
+    display: inline-block;
+    vertical-align: middle;
+    -ms-interpolation-mode: bicubic;
+}
+
+#viewer-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    position: relative;
+}
