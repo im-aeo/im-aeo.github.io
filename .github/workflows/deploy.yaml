@@ -2,7 +2,10 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: 'main'
+    branches: '*'
+  schedule:
+    - cron: '37 */4 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -16,17 +19,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
-        run: npm install
+        run: bun install
 
       - name: Build
-        run: npm run build
+        run: bun run build
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
@@ -37,8 +37,8 @@ jobs:
     needs: build_site
     runs-on: ubuntu-latest
     environment:
-      name: github
-      url: ${{ steps.deployment.outputs.page_url }}
+      name: github-pages
+      url: https://im-aeo.github.io/codecracker/
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
